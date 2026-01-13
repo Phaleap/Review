@@ -1,6 +1,7 @@
 package Review3;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 class Student{
     public String name;
@@ -42,7 +43,42 @@ public class Main {
         System.out.println(getStudent);
         //4-update
         System.out.println("===========");
-
+        studentsList.set(2, new Student("Hamsa", 22, 80.99));
+        for(Student student:studentsList){
+            System.out.println(student);
+        }
+        //5-remove
+        System.out.println("===========");
+        studentsList.remove(1);
+        for(Student student:studentsList){
+            System.out.println(student);
+        }
+        //6-Search
+        System.out.println("============");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Do you want to find someone?(y/n): ");
+        String answer = scanner.nextLine();
+        if(answer.equals("y")){
+            System.out.print("Type name: ");
+            String name = scanner.nextLine();
+            boolean found = false;
+            for(Student student:studentsList){
+                if(student.name.equals(name)){
+                    System.out.println("Found: "+ student);
+                    found = true;
+                    break;
+                }
+            }
+            if(!found){
+                System.out.println("Student's information not exist!");
+            }
+        }
+        else if(answer.equals("n")){
+            System.out.println("Bye bye!");
+        }
+        else{
+            System.out.println("What the heck!");
+        }
 
     }
 }
