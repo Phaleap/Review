@@ -42,6 +42,20 @@ public class Main {
         for(Student stu:studentArray){
             System.out.println(stu);
         }
+        //Find a student
+        System.out.println("=================");
+        String findStudent = "Kaka";
+        boolean found = false;
+        for(Student student:studentArray){
+            if(student.name.equals(findStudent)){
+                System.out.println(findStudent + " is found");
+                found = true;
+                break;
+            }
+        }
+        if(!found){
+            System.out.println(findStudent + " is not found");
+        }
 
 
     }
